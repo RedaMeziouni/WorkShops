@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+  <title>Canvas</title>
+</head>
+<body>
+<!-- Canvas declaration -->
+  <canvas onclick="alert('!!! ALERTE !!!')" id="Canvas" width="400" height="400" style="background-color:red">
+  </canvas>
+
+  <script type="application/javascript">
+    var c = document.getElementById("Canvas");
+    var ctx = c.getContext("2d");   
+    ctx.beginPath();
+    ctx.lineWidth = "10";
+    ctx.strokeStyle = "blue";
+    ctx.rect(50, 50, 150, 80);
+    ctx.stroke();      
+  </script>
+
+ 
+
+  <!-- Question  -->
+  <p> 
+      <b> Question :</b> <br> Que se passe-il lorsque le rectangle est plus grand que le canvas ? <br>
+      <b> Reponse :</b> <br>  Si le rectangle est plus grand, le canvas supprime automatiquement le rectangle.
+  </p>
+ 
+</body>
+</html>
