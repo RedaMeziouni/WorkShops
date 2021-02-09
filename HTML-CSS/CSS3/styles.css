@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header img {
+    position: fixed;
+    width: 300px;
+}

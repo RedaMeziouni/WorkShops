@@ -1,0 +1,83 @@
+$mainColor: #F7F7F7;
+$secondColor: #fff;
+$SuccessColor:#198754;
+$WarningColor: #ffc107;
+$dangerColor: #dc3545;
+$paraghraphColor: #969696;
+$width:100%;
+
+.all-section {
+    width:$width - 60 ;
+    height:$width;
+    padding: 20px;
+    margin: 60px auto;
+    border-radius: 10px;
+    background: $mainColor;
+    @media (max-width: 576px) { 
+        width:$width - 10 ;
+    }
+    &__one  {
+        background: $secondColor;
+        padding: 2px 40px;
+        margin-bottom: 10px;
+        border-radius: 0px 10px  10px 0px;
+        position: relative;
+        box-shadow:-2px 1px 6px #e4e4e4;
+        transition: .5s;
+        &--p{
+            color:$paraghraphColor;
+            margin-top: -13px;
+            font-size: 14px;
+        }
+        &--button{
+            position: absolute;
+            right: 24px;
+            top: 38px;
+            cursor: pointer;
+            color: #969696;
+            background-color: #fff;
+            border: none;
+            outline: 0;
+            &:hover{
+                transform: scale(1.2)
+            }
+        }
+        &:after {
+            content: "";
+            height: 100%;
+            background: $SuccessColor;
+            width: 3px;
+            position: absolute;
+            left: -4px;
+            top: 0;
+        }
+    }
+    &__tow{
+        @extend .all-section__one;
+        &--p{
+            @extend .all-section__one--p;
+        }
+        &--button{
+            @extend .all-section__one--button;
+        }
+        &::after{
+            background: $WarningColor;
+        }
+    }
+    &__three{
+        @extend .all-section__one;
+        &--p{
+            @extend .all-section__one--p;
+        }
+        &--button{
+            @extend .all-section__one--button;
+        }
+        &::after{
+            background: $dangerColor;
+        }
+    }
+}
+.hide{
+    transform:scale(0.0);
+    cursor: pointer;
+}
