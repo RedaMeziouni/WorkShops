@@ -4,4 +4,5 @@
 3. HTML/ CSS
 4. Warning App
 5. UML
+6. SQL
 
