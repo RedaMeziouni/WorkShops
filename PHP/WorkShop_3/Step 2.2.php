@@ -1,35 +1,45 @@
 <?php
-$note = array(
-    "Said" => 13,
-    "Badr" => 16,
-    "Najat" => 15,
-);
 
-// Ajout du karim
-$note["karim"]=10;
+//Fonction 
+function affichtable($note){
+    echo "<table border=1>";
+    foreach ($note as $x => $x_value){
+        echo "<tr><td>".$x."</td><td>".$x_value."</td></tr>";
+    }
+    echo "</table>";
+}
 
-// Supprimer la note de Badr
+//** */
+//Déclaration tableau
+$note = array( "said" => "13", "badr" => "16", "najat" => "15",);
+//Afficher Tableau 
+affichtable($note);
+
+//Insertion
+$note["karim"] ="10";
+$note=array_merge($note, ["zrze" => "18"]);
+
+// suppression
 unset($note["badr"]);
 
-// La note max du groupe
-echo "<b>La note maximale est : </b>",max($note) . "<br>";
+//affichage
+affichtable($note);
 
-// La note min du groupe
-echo "<b>La note minimale est : </b>",min($note) . "<br>";
+//Calcul du mac
+echo "La note maximale est :".max($note)."<br>";
 
-// Trier le tableau par ordre Alphabetique 
-ksort($note); // ksort() trie les clés du tableau par ordre croissant
+// Calcul du min
+echo "La note minimale est :".min($note);
 
-foreach ($note as $key => $value) {
-	echo "<b>La note de l’étudiant(e) $key est :</b> $value <br>";
-}
 
-// Classement des etudiants par ordre de merites
-arsort($note); // arsort() tri croissant des valeurs
+//Trier par ordre alphabétique
+ksort($note);
+affichtable($note);
+echo "<br>";
+arsort($note);
+affichtable($note);
 
-foreach ($note as $key => $value) {
-	echo "<b>La note de l’étudiant $key est : $value </b> <br>";
-}
+//La moyenne de la classe
+echo "la moyenne de la classe est:".round(array_sum($note)/count($note),precision:2);
 
-// La moyenne de la class 
-echo "<b>La moyenne de la classe est : </b>",round(array_sum($note)/count($note),2);
+?>
