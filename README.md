@@ -9,4 +9,5 @@
 8. SQL
 9. JavaScript
 10. PHP
+11. VueJS
 
